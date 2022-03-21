@@ -1,0 +1,15 @@
+[
+    {
+      "title": "Coding is f u n ",
+      "content": "Really makes you feel like a human computer sometimes."
+    },
+    {
+      "title": "The importance of MVC",
+      "content": "MVC allows developers to maintain a true separation of concerns, devising their code between the Model layer for data, the View layer for design, and the Controller layer for application logic."
+    },
+    {
+      "title": "How to add, edit, and delete a blog post?",
+      "content": "I don't know what i'm doing."
+    }
+  ]
+  
