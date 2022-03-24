@@ -20,6 +20,9 @@ Once the following is done, the user can begin the application by running `node 
 ## Usage
 Once the server is running, the user will first be introduced to the homepage that is showing example blog posts. When the user clicks `Dashboard` or `Login`, the user will be directed to the login screen. After creating an account and/or logging in, the user will be led to the dashboard, where they will be able to create and delete new blog posts. Newly created blog posts are also available to view on the homepage. 
 
+## Screenshot
+![screenshot of homepage](./Screenshot.png)
+
 ## Technologies Used
 * bcrypt
 * Sequelize
