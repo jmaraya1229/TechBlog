@@ -5,28 +5,34 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tech Blog</title>
-  <link rel="stylesheet" href="/css/jass.css">
   <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
 </head>
 
 <body>
   <div class="flex-column justify-space-around">
-    <header class="display-flex justify-space-between align-center p-2">
-      <h1>
-        <a href="/">Tech Blog</a>
-      </h1>
-      <nav>
+    <section class="hero is-link is-small">
+      <div class="hero-body">
+        <p class="title is-1 has-text-white">
+          Tech Blog
+        </p>
+      </div>
+    </section>    
+    <nav class="navbar is-spaced">
+      <div class="navbar-end">
         {{#if logged_in}}
-        <a href="/profile">profile</a> |
-        <button class="no-button" id="logout">logout</button>
+        <a class="button" href="/">Homepage </a> 
+        <a class="button" href="/dashboard"> Dashboard </a> 
+        <button class="button" id="logout"> Logout</button>
         {{else}}
-        <a href="/login">login</a>
+        <a class="button" href="/">Homepage  </a> 
+        <a class="button" href="/dashboard"> Dashboard </a> 
+        <a class="button" href="/login"> Login</a>
         {{/if}}
-      </nav>
-    </header>
+      </div>
+    </nav>
 
     <main class="container container-fluid mt-5">
-      <!-- Render the sub layout -->
       {{{ body }}}
     </main>
 

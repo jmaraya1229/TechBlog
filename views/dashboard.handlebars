@@ -1,0 +1,41 @@
+<h1 class="title is-1 has-text-centered has-text-white">Welcome, {{name}}!</h1>
+
+
+<div class="tile is-ancestor blog-list">
+  <div class="tile is-parent is-vertical">
+    <h3 class="title is-2 has-text-white">Create a New Blog:</h3>
+
+    <div class="tile is-child is-vertical">
+      <form class="form new-blog-form">
+        <div class="form-group">
+          <label class="label has-text-white" for="blog-title">Blog title:</label>
+          <input class="form-input" type="text" id="blog-title" name="blog-title" />
+        </div>
+        <div class="form-group">
+          <label class="label has-text-white" for="blog-content">Content:</label>
+          <textarea class="form-input" id="blog-content" name="blog-content"></textarea>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="button is-link">Create Blog</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  {{#if blogs.length}}
+    <div class="tile is-parent is-vertical blog-list">
+    <h3 class="title is-2 has-text-white">Current Blogs:</h3>
+
+      {{#each blogs as |blog|}}
+        <div class="tile is-child is-vertical">
+          <div class="box">
+            <h4 class="title is-4"><a href="/blog/{{blog.id}}">{{blog.title}}</a></h4>
+            <button class="button is-small is-danger" data-id="{{blog.id}}">DELETE</button>
+          </div>
+        </div>
+      {{/each}}
+      
+    </div>
+  {{/if}}
+
+<script src="./js/dashboard.js"></script>

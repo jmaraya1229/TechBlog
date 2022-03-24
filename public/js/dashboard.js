@@ -4,7 +4,7 @@ const newFormHandler = async (event) => {
     const title = document.querySelector('#blog-title').value.trim();
     const content = document.querySelector('#blog-content').value.trim();
   
-    if (name && description) {
+    if (title && content) {
       const response = await fetch(`/api/blogs`, {
         method: 'POST',
         body: JSON.stringify({ title, content }),
@@ -14,28 +14,28 @@ const newFormHandler = async (event) => {
       });
   
       if (response.ok) {
-        document.location.replace('/profile');
+        document.location.replace('/dashboard');
       } else {
         alert('Failed to create blog');
       }
     }
   };
-  
-  const delButtonHandler = async (event) => {
-    if (event.target.hasAttribute('data-id')) {
-      const id = event.target.getAttribute('data-id');
-  
-      const response = await fetch(`/api/blogs/${id}`, {
-        method: 'DELETE',
-      });
-  
-      if (response.ok) {
-        document.location.replace('/blog');
-      } else {
-        alert('Failed to delete blog');
-      }
+
+const delButtonHandler = async (event) => {
+  if (event.target.hasAttribute('data-id')) {
+    const id = event.target.getAttribute('data-id');
+
+    const response = await fetch(`/api/blogs/${id}`, {
+      method: 'DELETE',
+    });
+
+    if (response.ok) {
+      document.location.replace('/dashboard');
+    } else {
+      alert('Failed to delete blog');
     }
-  };
+  }
+};
   
   document
     .querySelector('.new-blog-form')
@@ -44,4 +44,5 @@ const newFormHandler = async (event) => {
   document
     .querySelector('.blog-list')
     .addEventListener('click', delButtonHandler);
+
   
